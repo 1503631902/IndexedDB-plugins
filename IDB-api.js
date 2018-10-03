@@ -66,7 +66,7 @@ IDB.prototype = {
             let store, request, mode
             mode = 'readwrite'
             store = IDB.prototype.getObjectStore(mode)
-            request = data.usertoken ? store.put(data) : store.add(data)
+            request = data.id ? store.put(data) : store.add(data)
             if (cb && typeof cb === 'function') {
                 request.onsuccess = cb
                 request.onerror = cb
