@@ -29,6 +29,7 @@ export default {
             storeList: ['search_nonstandard_history', 'search_parts_history'] // 注册的store名
         })
         db.open() // 连接数据库
+        db.setStoreName('search_nonstandard_history') // 设置要操作的store
         
         let data = {
             id: 1,
