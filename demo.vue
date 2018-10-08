@@ -23,7 +23,13 @@ export default {
     methods: {},
     computed: {},
     mounted () {
-        let db = new IDB({storeName: 'user_search_info'})
+        let db = new IDB({
+            dbName: 'dms_mobile_mart', // 数据库名
+            version: 1,
+            storeList: ['search_nonstandard_history', 'search_parts_history'] // 注册的store名
+        })
+        db.open() // 连接数据库
+        
         let data = {
             id: 1,
             usertoken: '06376afe-22d5-43bc-b8c6-4df0ef106818',
